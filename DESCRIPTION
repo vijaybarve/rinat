@@ -1,24 +1,28 @@
 Package: rinat
 Type: Package
-Title: Access iNaturalist Data Through APIs
+Title: Access 'iNaturalist' Data Through APIs
 Version: 0.1.6
-Date: 2020-01-06
+Date: 2020-10-13
 Authors@R: c(
     person("Vijay", "Barve", role = "aut", email = "vijay.barve@gmail.com",
             comment = c(ORCID = "0000-0002-4852-2567")),
-    person("Edmund", "Hart", role = c("aut", "cre"), 
-            email = "edmund.m.hart@gmail.com")
+    person("Edmund", "Hart", role = "aut",
+            email = "edmund.m.hart@gmail.com"),
+    person("Stéphane", "Guillou", role = "cre", email = "stephane.guillou@member.fsf.org",
+            comment = c(ORCID = "0000-0001-8992-0951"))
     )
-Description: A programmatic interface to the API provided by the iNaturalist website <http://inaturalist.org> to download species occurrence data submitted by citizen scientists.
+Description: A programmatic interface to the API provided by the 'iNaturalist' website <https://www.inaturalist.org/> to download species occurrence data submitted by citizen scientists.
 License: MIT + file LICENSE
 Imports:
     httr,
     plyr,
     jsonlite,
     ggplot2,
-    maps
-RoxygenNote: 6.1.1
-URL: https://docs.ropensci.org/rinat (website)
+    maps,
+    sp
+RoxygenNote: 7.1.1
+URL: https://docs.ropensci.org/rinat/ (website)
     https://github.com/ropensci/rinat (devel)
-Suggests: knitr, rmarkdown, testthat
+Suggests: knitr, rmarkdown, testthat, sf
 VignetteBuilder: knitr
+Encoding: UTF-8

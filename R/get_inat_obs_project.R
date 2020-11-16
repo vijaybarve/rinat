@@ -3,7 +3,7 @@
 #'@param grpid Name of the group as an iNaturalist slug or group id
 #'@param type character Either "observations" or "info"  Observations returns all observations, and "info" returns project details similar to what you can find on a project webpage.
 #'@param raw logical TRUE or FALSE. If TRUE and searching for project info, returns the raw output of parsed JSON for that project. Otherwise just some basic information is returned as a list
-#'@details An iNaturalist slug is usually the project as single string with words seperated by hyphens. For instance, the project "State Flowers of the United States" has a slug of "state-flowers-of-the-united-states-eol-collection".  This can be extracted from the URL for the project usually. The state flowers project has the following URL http://www.inaturalist.org/projects/state-flowers-of-the-united-states-eol-collection
+#'@details An iNaturalist slug is usually the project as single string with words separated by hyphens. For instance, the project "State Flowers of the United States" has a slug of "state-flowers-of-the-united-states-eol-collection".  This can be extracted from the URL for the project usually. The state flowers project has the following URL http://www.inaturalist.org/projects/state-flowers-of-the-united-states-eol-collection
 #'
 #'@examples \dontrun{
 #'  get_inat_obs_project(354, type = "observations")
@@ -23,7 +23,7 @@ get_inat_obs_project <- function(grpid, type = c("observations", "info"), raw = 
   ### Error handling for empty projects
   dat <- NULL
   if(is.null(recs))(return(dat))
-  cat(paste(recs," Records\n"))
+  message(paste(recs," records\n"))
 
   if(argstring == "info"){
     output <- list()
@@ -47,8 +47,8 @@ get_inat_obs_project <- function(grpid, type = c("observations", "info"), raw = 
       loopval <- recs %/% per_page
     }
     if (recs >= 10000) {
-      cat(
-        "Number of observations in project greater than current API limit\nreturning the first 10000\n"
+      warning(
+        "Number of observations in project greater than current API limit.\nReturning the first 10000.\n"
       )
       loopval <- 10000 / per_page
     }
@@ -64,10 +64,10 @@ get_inat_obs_project <- function(grpid, type = c("observations", "info"), raw = 
           "&per_page=", per_page
         )
       if (i == 1) {
-        cat(paste0("0-", per_page))
+        message(paste0("0-", per_page))
       }
       if (i > 1) {
-        cat(paste0("-", i * per_page))
+        message(paste0("-", i * per_page))
       }
       obs_list[[i]] <-
         fromJSON(content(GET(url1), as = "text"), flatten = TRUE)

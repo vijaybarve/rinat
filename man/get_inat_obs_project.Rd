@@ -4,8 +4,7 @@
 \alias{get_inat_obs_project}
 \title{Download observations or info from a project}
 \usage{
-get_inat_obs_project(grpid, type = c("observations", "info"),
-  raw = FALSE)
+get_inat_obs_project(grpid, type = c("observations", "info"), raw = FALSE)
 }
 \arguments{
 \item{grpid}{Name of the group as an iNaturalist slug or group id}
@@ -18,7 +17,7 @@ get_inat_obs_project(grpid, type = c("observations", "info"),
 retrieve observations from a particular iNaturalist project. This function can be used to get either observations or information from a project by project name or ID
 }
 \details{
-An iNaturalist slug is usually the project as single string with words seperated by hyphens. For instance, the project "State Flowers of the United States" has a slug of "state-flowers-of-the-united-states-eol-collection".  This can be extracted from the URL for the project usually. The state flowers project has the following URL http://www.inaturalist.org/projects/state-flowers-of-the-united-states-eol-collection
+An iNaturalist slug is usually the project as single string with words separated by hyphens. For instance, the project "State Flowers of the United States" has a slug of "state-flowers-of-the-united-states-eol-collection".  This can be extracted from the URL for the project usually. The state flowers project has the following URL http://www.inaturalist.org/projects/state-flowers-of-the-united-states-eol-collection
 }
 \examples{
 \dontrun{
